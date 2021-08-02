@@ -1,0 +1,35 @@
+<div class="login-wrapper">
+    <div class="card">
+        <div class="card-body">
+            <form class="form-signin" (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+                <h1 class="h3 mb-3 fw-normal">Admin Login</h1>
+
+                <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput"
+                    name="email" placeholder="name@example.com"
+                    required autofocus ngModel>
+                <label for="floatingInput">Email address</label>
+                </div>
+
+                <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword"
+                    name="password" placeholder="Password"
+                    required ngModel>
+                <label for="floatingPassword">Password</label>
+                </div>
+
+                <p>Have Username?<a href="#">Login</a></p>
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+                
+                <div class="alert alert-danger" role="alert" *ngIf="isFormInvalid">
+                    Please fill all fields
+                </div>
+
+                <div class="alert alert-danger" role="alert" *ngIf="areCredentialsInvalid">
+                    Invalid email or password
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

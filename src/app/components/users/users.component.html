@@ -1,0 +1,17 @@
+<table id="users">
+  <tr>
+    <th>Name</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.name}}</td>
+    <td><button (click)="setUserEdit(user)">Update</button></td>
+    <td><button (click)="removeUser(user)">Delete</button></td>
+  </tr>
+</table>
+<div class="container">
+  <input type="text" name="userName" #userName [(ngModel)]="user.name">
+  <button [hidden]="add" (click)="addUser(userName.value);userName.value=''">add User</button>
+  <button [hidden]="edit" (click)="updateUser()">Update User</button>
+</div>
